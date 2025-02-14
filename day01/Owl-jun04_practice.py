@@ -12,3 +12,13 @@ print(oddList(8)) # 결과 : [1,3,5,7]
 
 # 팁1. 리스트 컴프리핸션 활용
 # 팁2. for문과 if문 활용
+
+def oddList(n):
+    answer = []
+    for i in range(1,n):
+        if i % 2 == 1:
+            answer += [i]
+    return  answer
+
+print(oddList(5)) # 결과 : [1,3]
+print(oddList(8)) # 결과 : [1,3,5,7]
