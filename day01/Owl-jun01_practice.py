@@ -18,3 +18,16 @@ print(ipguCut(ages))
 
 # 팁1. sort  +  리스트 슬라이싱 list[0:3] ... 을 활용하여 푸는 알고리즘
 # 팁2. for문, 그리고 if 문을 활용한 알고리즘
+
+ages = [18, 20, 17, 15, 13, 12, 21, 24, 33]
+
+def ipguCut(input):
+    result = []
+    for i in ages:
+        if ages:
+            if i <= 19:
+                result += [i]
+            else:
+                pass
+    return result
+print(ipguCut(ages))
