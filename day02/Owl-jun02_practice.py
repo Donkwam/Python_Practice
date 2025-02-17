@@ -14,6 +14,8 @@ temp = dict.values()
 print(temp) # [1995,1996,1995,2000,1996,2000]
 
 # 챌린지 .
+for i in temp,dict.keys():
+    print(i)
 
 """ 
 강황석준 조 멤버들의 나이를 구하는 로직을 작성 후, 출력해보세요. 
