@@ -1,3 +1,4 @@
+"""
 # 클래스란 ?
 
 # 어떤 객체의 특성,특징 등등등을 모아둔 '틀' 으로서 인스턴스를 찍어낼 수 있다.
@@ -13,9 +14,8 @@ class people():
     # public : 클래스 밖에서도, people.name 등으로 접근이 가능하다.
 
     # __init__ (생성자) : 클래스의 인스턴스가 생성될 때 자동으로 실행되는 함수이다.
-
+    print('생성자가 실행되었습니다!')
     def __init__(self,name): # 매개변수 설정, 내가 input을 받아서 사용하고싶은 변수가 있다면, 매개변수를 self 이외에 설정을 해주어야한다. 여기서는 name을 선언하여 사용했다.
-        print('생성자가 실행되었습니다!')
         self.name = name
         self.hand = '손'
         self.foot = '발'
@@ -27,15 +27,32 @@ class people():
     def shake(self,object): # 매개변수 설정, 이 또한 아무것도 받지 않으려면 self만 설정해놓으면 된다.
         return f'{self.name}이가 {object}를 흔듭니다 !'
     
-    def __str__(self):
-        return
     
 # 클래스 사용하기
 
 # people 클래스의 인스턴스 생성 후 human 이라는 변수에 담았다 !
 human = people('최보정') # 생성자가 실행되었습니다!
 human.shake(human.foot) # 최보정이가 발을 흔듭니다 !
-print(human)
+
+print(human.shake(human.foot))
+"""
+
+class man():
+    print('생성자가 실행되었습니다.')
+
+    def __init__(self, name):
+        self.name = name
+        self.hand = '손'
+
+    def shake(self, num):
+        return f'{self.name}이가 {num}을 흔듭니다 !'
+
+
+human = input('이름을 입력하세요.') 
+a = man(human)
+a.shake(a.hand)
+
+print(a.shake(a.hand))
 
 """
 - 연습 -
