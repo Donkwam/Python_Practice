@@ -41,3 +41,17 @@ man.smoke()
 본인의 행동들을 함수로 먼저 구현한 후, 본인을 클래스로 정의하고 인스턴스를 생성 후 사용해보세요.
 자유롭게 하시면 됩니다.
 """
+
+class Dong():
+    def __init__(self):
+        self.name = '동관'
+
+    def hand(self):
+        print(f'{self.name}이(가) 손을 흔듭니다')
+        
+    def eye(self):
+        print(f'{self.name}이(가) 바라봅니다.')
+
+human = Dong()
+human.hand()
+human.eye()
