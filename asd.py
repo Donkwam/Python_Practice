@@ -1,10 +1,29 @@
+def solution(hp, monsters, attack):
+    monster_damage = {
+        -1: 0,  # 회피
+        0: monsters['골렘'],
+        1: monsters['리본돼지'],
+        2: monsters['슬라임']
+    }
+    
+    for hit in attack:
+        hp -= monster_damage[hit]
+        if hp <= 0:
+            return -1
+    
+    return hp
 
-# 딕셔너리 데이터
-people = { '최보정': 1995, '이형우': 1996, '강석준': 1995, '우동관': 2000, '황석준': 1996, '김찬수': 2000 }
+# 테스트 케이스
+hp = 200
+monsters = {'골렘': 40, '리본돼지': 20, '슬라임': 10}
 
-# 나이 계산 및 출력
-for name, birth_year in people.items():
-    age = 2025 - birth_year
-    print(f'{name} : {age}세')
+attack = [-1, 0, 1, 1, 0, 2, -1, 1]
+attack2 = [0, 0, 0, 0, 0, 2, -1, 1]
+attack3 = [-1, -1, 1, 1, 0, 2, -1, 1]
+attack4 = [-1, -1, -1, -1, -1, -1, -1, -1]
 
-print(people.items())
+print(solution(hp, monsters, attack))   # 50
+print(solution(hp, monsters, attack2))  # -1
+print(solution(hp, monsters, attack3))  # 90
+print(solution(hp, monsters, attack4))  # 200
+

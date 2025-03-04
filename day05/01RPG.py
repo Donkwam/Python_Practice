@@ -21,15 +21,23 @@ monsters = {'골렘' : 40 , '리본돼지' : 20 ,'슬라임' : 10}
 
 
 # 테스트 케이스
-attack = [-1,0,1,1,0,2,-1,1]        
-attack2 = [0,0,0,0,0,2,-1,1]        
-attack3 = [-1,-1,1,1,0,2,-1,1]      
+attack = [-1,0,1,1,0,2,-1,1]
+attack2 = [0,0,0,0,0,2,-1,1]
+attack3 = [-1,-1,1,1,0,2,-1,1]
 attack4 = [-1,-1,-1,-1,-1,-1,-1,-1] 
 
 
 def solution(hp,monsters,attack):
-    
+    a = list(monsters.keys())
+    for i in attack:
+        if i == -1:
+            continue
+        else:
+            hp -= monsters[a[i]]
+            if hp <= 0:  
+                return -1
     return hp
+    
 
 
 print(solution(hp,monsters,attack))     # 50
